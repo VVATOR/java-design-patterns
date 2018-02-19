@@ -2,15 +2,18 @@ package com.epam.vikhlaev.grow.pattern.creational.singleton.impls;
 
 public class BasedOnWrappEnumSingleton {
 	private enum Instance {
-		INSTANCE;
+		INSTANCE(new BasedOnWrappEnumSingleton());
 
-		private Instance() {
+		private BasedOnWrappEnumSingleton instance;
+
+		private Instance(BasedOnWrappEnumSingleton instance) {
 			System.out.println("\tcreate BasedOnWrappEnumSingleton Instance");
+			this.instance = instance;
 		}
 
 		public BasedOnWrappEnumSingleton getInstance() {
 			System.out.println("\tget from memory BasedOnWrappEnumSingleton Instance");
-			return new BasedOnWrappEnumSingleton();
+			return this.instance;
 		}
 	}
 
@@ -19,7 +22,6 @@ public class BasedOnWrappEnumSingleton {
 	}
 
 	public static BasedOnWrappEnumSingleton getInstance() {
-		System.out.println("\tget from memory BasedOnWrappEnumSingleton");
 		return Instance.INSTANCE.getInstance();
 	}
 }
