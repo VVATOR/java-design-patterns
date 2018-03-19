@@ -8,8 +8,9 @@ import org.junit.Test;
 
 public class SingletonTest<T> {
 
-	private final Supplier<T> singletonMethod;
+	private Supplier<T> singletonMethod;
 
+	
 	public SingletonTest(Supplier<T> singletonMethod) {
 		super();
 		this.singletonMethod = singletonMethod;
