@@ -5,4 +5,5 @@ public class EagerSingletonTest extends SingletonTest<EagerSingleton> {
 	public EagerSingletonTest() {
 		super(EagerSingleton::getInstance);
 	}
+
 }

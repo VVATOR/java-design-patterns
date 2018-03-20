@@ -6,14 +6,14 @@ import java.util.function.Supplier;
 
 import org.junit.Test;
 
-public class SingletonTest<T> {
+public abstract class SingletonTest<T> {
 
 	private Supplier<T> singletonMethod;
 
-	
 	public SingletonTest(Supplier<T> singletonMethod) {
 		super();
 		this.singletonMethod = singletonMethod;
+
 	}
 
 	@Test
